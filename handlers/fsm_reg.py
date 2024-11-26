@@ -55,7 +55,12 @@ async def load_photo(message: types.Message, state: FSMContext):
 
     async with state.proxy() as data:
         data['photo'] = message.photo[-1].file_id
-    await message.answer_photo(photo=data['photo'])
+    await message.answer_photo(photo=data['photo'],
+                               caption=f"название: {data['name']}\n"
+                               f"цена: {data['price']}\n"
+                               f"категория: {data['category']}\n"
+                               f"размер: {data['size']}\n"
+                               )
     await state.finish()
 
 
