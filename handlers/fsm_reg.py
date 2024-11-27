@@ -1,3 +1,5 @@
+from email import message_from_bytes
+
 from aiogram import types, Dispatcher
 from aiogram.dispatcher import FSMContext
 from config import bot
@@ -72,4 +74,3 @@ def reg_handler_fsm_registration(dp: Dispatcher):
     dp.register_message_handler(load_category, state=fsm_store.category)
     dp.register_message_handler(load_price, state=fsm_store.price)
     dp.register_message_handler(load_photo, state=fsm_store.photo,content_types=['photo'])
-
