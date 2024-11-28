@@ -7,6 +7,8 @@ from aiogram.types import ReplyKeyboardRemove
 from db import db_main
 import buttons
 from handlers.fsm_reg import start_fsm
+import db.db_main  # Correct import based on your folder structure
+
 
 
 class store_fsm(StatesGroup):
@@ -114,11 +116,11 @@ async def submit(message: types.Message, state : FSMContext):
                 product_id=data['product_id'],
                 collection=data['collection'],
             )
-            # await db_main.sql_insert_store_detail(
-            #     info_product=data['info_product'],
-            #     product_id=data['product_id'],
-            #     category_id=data['category'],
-            # )
+            await db_main.sql_insert_store_detail(
+                info_product=data['info_product'],
+                product_id=data['product_id'],
+                category_id=data['category'],
+            )
         # await dp_main.
     elif message.text == 'Нет':
         kb_remove = ReplyKeyboardRemove()

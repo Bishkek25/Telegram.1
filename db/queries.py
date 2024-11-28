@@ -1,6 +1,6 @@
 
 CREAT_TABLE_STORE = """
-CREATE TABLE IF NOT EXISTS store ( 
+CREATE_TABLE IF NOT EXISTS store ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name_product TEXT,
     product_id TEXT,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS store (
 """
 
 CREATE_collection = """
-CREATE TABLE IF NOT EXISTS collection_products ( 
+CREATE_TABLE IF NOT EXISTS collection_products ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_id TEXT,
     collection TEXT
@@ -21,12 +21,12 @@ CREATE TABLE IF NOT EXISTS collection_products (
 
 
 INSERT_STORE ="""
-     INSERT INTO store (name_product, product_id, size, price, photo)
+     INSERT INTO_store (name_product, product_id, size, price, photo)
      VALUES (?, ?, ?, ?, ?)
 """
 
 INSERT_collection ="""
-     INSERT INTO collection_products (product_id, collection)
+     INSERT INTO_collection_products (product_id, collection)
      VALUES (?, ?)
 """
 
@@ -35,17 +35,21 @@ INSERT_collection ="""
 
 
 
-#
-# CREAT_TABLE_TABLE_DETAIL = """
-# CREATE TABLE IF NOT EXISTS store_detail (
-# id INTEGER PRIMARY KEY AUTOINCREMENT,
-# unfo_product TEXT,
-# product_id TEXT,
-# category_id TEXT,
-# )
-# """
-#
-# INSERT_STORE = """
-#      INSERT INTO_store_detail (info_product, product_id, category_id)
-#      VALUES (?, ?, ?)
-# """
+
+CREAT_TABLE_TABLE_DETAIL = """
+CREAT TABLE IF NOT EXISTS store_detail (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+info_product TEXT,
+product_id TEXT,
+category_id TEXT,
+)
+"""
+
+INSERT_STORE_DETAIL = """
+
+       INSERT INTO_store_detail (info_product, product_id, category_id)
+         VALUES (?, ?, ?)
+"""
+
+
+
